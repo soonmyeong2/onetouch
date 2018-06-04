@@ -28,17 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.메세지보내기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.상세보기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tapcot = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.contextMenuStrip1.SuspendLayout();
+            this.tapcot.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(30, 27);
+            this.button1.Location = new System.Drawing.Point(13, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 38);
+            this.button1.Size = new System.Drawing.Size(124, 27);
             this.button1.TabIndex = 0;
             this.button1.Text = "정보 업데이트";
             this.button1.UseVisualStyleBackColor = true;
@@ -51,40 +63,112 @@
             "내가 원하는 룸메이트",
             "나를 원하는 룸메이트",
             "서로 원하는 룸메이트"});
-            this.comboBox1.Location = new System.Drawing.Point(220, 42);
+            this.comboBox1.Location = new System.Drawing.Point(156, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(158, 23);
             this.comboBox1.TabIndex = 2;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(30, 88);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(422, 199);
-            this.listBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(384, 37);
+            this.button2.Location = new System.Drawing.Point(324, 17);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(66, 30);
             this.button2.TabIndex = 4;
             this.button2.Text = "검색";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.FullRowSelect = true;
+            this.listView1.Location = new System.Drawing.Point(13, 66);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(377, 141);
+            this.listView1.TabIndex = 5;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged_1);
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.메세지보내기ToolStripMenuItem,
+            this.상세보기ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 80);
+            // 
+            // 메세지보내기ToolStripMenuItem
+            // 
+            this.메세지보내기ToolStripMenuItem.Name = "메세지보내기ToolStripMenuItem";
+            this.메세지보내기ToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.메세지보내기ToolStripMenuItem.Text = "메세지 보내기";
+            this.메세지보내기ToolStripMenuItem.Click += new System.EventHandler(this.메세지보내기ToolStripMenuItem_Click);
+            // 
+            // 상세보기ToolStripMenuItem
+            // 
+            this.상세보기ToolStripMenuItem.Name = "상세보기ToolStripMenuItem";
+            this.상세보기ToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.상세보기ToolStripMenuItem.Text = "상세보기";
+            this.상세보기ToolStripMenuItem.Click += new System.EventHandler(this.상세보기ToolStripMenuItem_Click);
+            // 
+            // tapcot
+            // 
+            this.tapcot.Controls.Add(this.tabPage1);
+            this.tapcot.Controls.Add(this.tabPage2);
+            this.tapcot.Location = new System.Drawing.Point(19, 7);
+            this.tapcot.Name = "tapcot";
+            this.tapcot.SelectedIndex = 0;
+            this.tapcot.Size = new System.Drawing.Size(419, 254);
+            this.tapcot.TabIndex = 6;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.listView1);
+            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(411, 225);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.listView2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(411, 225);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(24, 25);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(362, 175);
+            this.listView2.TabIndex = 0;
+            this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 309);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(454, 274);
+            this.Controls.Add(this.tapcot);
             this.Name = "Client";
             this.Text = "Client";
+            this.Load += new System.EventHandler(this.Client_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.tapcot.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -93,7 +177,14 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 메세지보내기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 상세보기ToolStripMenuItem;
+        private System.Windows.Forms.TabControl tapcot;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListView listView2;
     }
 }

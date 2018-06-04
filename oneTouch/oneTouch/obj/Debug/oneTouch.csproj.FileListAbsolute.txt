@@ -58,3 +58,8 @@ C:\Users\0067\Desktop\gitHub\oneTouch\oneTouch\bin\Debug\OpenCvSharp.pdb
 C:\Users\0067\Desktop\gitHub\oneTouch\oneTouch\bin\Debug\OpenCvSharp.xml
 C:\Users\0067\Desktop\gitHub\oneTouch\oneTouch\bin\Debug\OpenCvSharp.Extensions.pdb
 C:\Users\0067\Desktop\gitHub\oneTouch\oneTouch\bin\Debug\OpenCvSharp.Extensions.xml
+C:\Users\0067\Desktop\gitHub\oneTouch\oneTouch\obj\Debug\oneTouch.csproj.oneTouch.exe.config
+C:\Users\0067\Desktop\gitHub\oneTouch\oneTouch\bin\Debug\EntLibContrib.Data.Tibero.dll
+C:\Users\0067\Desktop\gitHub\oneTouch\oneTouch\bin\Debug\Tibero.DbAccess.dll
+C:\Users\0067\Desktop\gitHub\oneTouch\oneTouch\obj\Debug\oneTouch.msgbox.resources
+C:\Users\0067\Desktop\gitHub\oneTouch\oneTouch\obj\Debug\oneTouch.info.resources
