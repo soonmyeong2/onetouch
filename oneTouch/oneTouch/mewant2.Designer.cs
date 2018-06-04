@@ -80,7 +80,7 @@
             this.groupBox3.Size = new System.Drawing.Size(397, 508);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "생활패턴";
+            this.groupBox3.Text = "  선호 생활패턴  ";
             // 
             // groupBox12
             // 
@@ -418,7 +418,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Name = "mewant2";
-            this.Text = "원하는 룸메이트 정보 (1/2)";
+            this.Text = "원하는 룸메이트 정보 (2/2)";
             this.groupBox3.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
