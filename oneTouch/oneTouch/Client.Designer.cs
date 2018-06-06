@@ -35,15 +35,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.메세지보내기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.상세보기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.연락처전송ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tapcot = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.연락처전송ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listView2 = new System.Windows.Forms.ListView();
             this.contextMenuStrip1.SuspendLayout();
             this.tapcot.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -98,25 +97,24 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.메세지보내기ToolStripMenuItem,
             this.상세보기ToolStripMenuItem,
             this.연락처전송ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 76);
-            // 
-            // 메세지보내기ToolStripMenuItem
-            // 
-            this.메세지보내기ToolStripMenuItem.Name = "메세지보내기ToolStripMenuItem";
-            this.메세지보내기ToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
-            this.메세지보내기ToolStripMenuItem.Text = "메세지 보내기";
-            this.메세지보내기ToolStripMenuItem.Click += new System.EventHandler(this.메세지보내기ToolStripMenuItem_Click);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 80);
             // 
             // 상세보기ToolStripMenuItem
             // 
             this.상세보기ToolStripMenuItem.Name = "상세보기ToolStripMenuItem";
-            this.상세보기ToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.상세보기ToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.상세보기ToolStripMenuItem.Text = "상세보기";
             this.상세보기ToolStripMenuItem.Click += new System.EventHandler(this.상세보기ToolStripMenuItem_Click);
+            // 
+            // 연락처전송ToolStripMenuItem
+            // 
+            this.연락처전송ToolStripMenuItem.Name = "연락처전송ToolStripMenuItem";
+            this.연락처전송ToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.연락처전송ToolStripMenuItem.Text = "연락처 전송";
+            this.연락처전송ToolStripMenuItem.Click += new System.EventHandler(this.연락처전송ToolStripMenuItem_Click);
             // 
             // tapcot
             // 
@@ -155,19 +153,14 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // listView2
+            // label2
             // 
-            this.listView2.Location = new System.Drawing.Point(26, 74);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(358, 123);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // 연락처전송ToolStripMenuItem
-            // 
-            this.연락처전송ToolStripMenuItem.Name = "연락처전송ToolStripMenuItem";
-            this.연락처전송ToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
-            this.연락처전송ToolStripMenuItem.Text = "연락처 전송";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(318, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "-진정 스님";
             // 
             // label1
             // 
@@ -178,14 +171,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "내게 오는 사람들을 진정으로 대하라. 돈은 덤으로 온다.";
             // 
-            // label2
+            // listView2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(318, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "-진정 스님";
+            this.listView2.Location = new System.Drawing.Point(26, 74);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(358, 123);
+            this.listView2.TabIndex = 0;
+            this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // Client
             // 
@@ -212,7 +204,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 메세지보내기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 상세보기ToolStripMenuItem;
         private System.Windows.Forms.TabControl tapcot;
         private System.Windows.Forms.TabPage tabPage1;

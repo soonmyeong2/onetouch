@@ -52,7 +52,6 @@ namespace oneTouch
                 if (textBox1.Text == id && textBox2.Text == pw)
                 {
                     count = 1;
-                    Console.WriteLine("로그인 성공!!");
 
                     Client sign = new Client();
                     sign.PassUserID = textBox1.Text;
