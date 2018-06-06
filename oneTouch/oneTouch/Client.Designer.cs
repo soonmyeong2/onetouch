@@ -7,6 +7,7 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -40,6 +41,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listView2 = new System.Windows.Forms.ListView();
+            this.연락처전송ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.tapcot.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -95,9 +99,10 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.메세지보내기ToolStripMenuItem,
-            this.상세보기ToolStripMenuItem});
+            this.상세보기ToolStripMenuItem,
+            this.연락처전송ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 80);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 76);
             // 
             // 메세지보내기ToolStripMenuItem
             // 
@@ -109,7 +114,7 @@
             // 상세보기ToolStripMenuItem
             // 
             this.상세보기ToolStripMenuItem.Name = "상세보기ToolStripMenuItem";
-            this.상세보기ToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.상세보기ToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.상세보기ToolStripMenuItem.Text = "상세보기";
             this.상세보기ToolStripMenuItem.Click += new System.EventHandler(this.상세보기ToolStripMenuItem_Click);
             // 
@@ -139,6 +144,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.listView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -150,11 +157,35 @@
             // 
             // listView2
             // 
-            this.listView2.Location = new System.Drawing.Point(24, 25);
+            this.listView2.Location = new System.Drawing.Point(26, 74);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(362, 175);
+            this.listView2.Size = new System.Drawing.Size(358, 123);
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // 연락처전송ToolStripMenuItem
+            // 
+            this.연락처전송ToolStripMenuItem.Name = "연락처전송ToolStripMenuItem";
+            this.연락처전송ToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.연락처전송ToolStripMenuItem.Text = "연락처 전송";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(382, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "내게 오는 사람들을 진정으로 대하라. 돈은 덤으로 온다.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(318, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "-진정 스님";
             // 
             // Client
             // 
@@ -163,12 +194,13 @@
             this.ClientSize = new System.Drawing.Size(454, 274);
             this.Controls.Add(this.tapcot);
             this.Name = "Client";
-            this.Text = "Client";
+            this.Text = "One Touch";
             this.Load += new System.EventHandler(this.Client_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.tapcot.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -186,5 +218,8 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ToolStripMenuItem 연락처전송ToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

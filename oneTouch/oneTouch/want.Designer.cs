@@ -64,20 +64,12 @@
             this.radioButton13 = new System.Windows.Forms.RadioButton();
             this.radioButton15 = new System.Windows.Forms.RadioButton();
             this.radioButton16 = new System.Windows.Forms.RadioButton();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.radioButton26 = new System.Windows.Forms.RadioButton();
-            this.radioButton23 = new System.Windows.Forms.RadioButton();
-            this.radioButton30 = new System.Windows.Forms.RadioButton();
-            this.radioButton29 = new System.Windows.Forms.RadioButton();
-            this.radioButton31 = new System.Windows.Forms.RadioButton();
-            this.radioButton32 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -90,8 +82,6 @@
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox17.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -497,100 +487,9 @@
             this.radioButton16.Text = "아침";
             this.radioButton16.UseVisualStyleBackColor = true;
             // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.groupBox17);
-            this.groupBox13.Location = new System.Drawing.Point(25, 764);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(397, 132);
-            this.groupBox13.TabIndex = 12;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "인적사항";
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Controls.Add(this.radioButton26);
-            this.groupBox17.Controls.Add(this.radioButton23);
-            this.groupBox17.Controls.Add(this.radioButton30);
-            this.groupBox17.Controls.Add(this.radioButton29);
-            this.groupBox17.Controls.Add(this.radioButton31);
-            this.groupBox17.Controls.Add(this.radioButton32);
-            this.groupBox17.Location = new System.Drawing.Point(29, 30);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(338, 83);
-            this.groupBox17.TabIndex = 9;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "  종교  ";
-            // 
-            // radioButton26
-            // 
-            this.radioButton26.AutoSize = true;
-            this.radioButton26.Location = new System.Drawing.Point(226, 52);
-            this.radioButton26.Name = "radioButton26";
-            this.radioButton26.Size = new System.Drawing.Size(58, 19);
-            this.radioButton26.TabIndex = 5;
-            this.radioButton26.TabStop = true;
-            this.radioButton26.Text = "무교";
-            this.radioButton26.UseVisualStyleBackColor = true;
-            // 
-            // radioButton23
-            // 
-            this.radioButton23.AutoSize = true;
-            this.radioButton23.Location = new System.Drawing.Point(14, 52);
-            this.radioButton23.Name = "radioButton23";
-            this.radioButton23.Size = new System.Drawing.Size(73, 19);
-            this.radioButton23.TabIndex = 4;
-            this.radioButton23.TabStop = true;
-            this.radioButton23.Text = "천주교";
-            this.radioButton23.UseVisualStyleBackColor = true;
-            // 
-            // radioButton30
-            // 
-            this.radioButton30.AutoSize = true;
-            this.radioButton30.Location = new System.Drawing.Point(116, 52);
-            this.radioButton30.Name = "radioButton30";
-            this.radioButton30.Size = new System.Drawing.Size(88, 19);
-            this.radioButton30.TabIndex = 3;
-            this.radioButton30.TabStop = true;
-            this.radioButton30.Text = "이슬람교";
-            this.radioButton30.UseVisualStyleBackColor = true;
-            // 
-            // radioButton29
-            // 
-            this.radioButton29.AutoSize = true;
-            this.radioButton29.Location = new System.Drawing.Point(226, 22);
-            this.radioButton29.Name = "radioButton29";
-            this.radioButton29.Size = new System.Drawing.Size(73, 19);
-            this.radioButton29.TabIndex = 2;
-            this.radioButton29.TabStop = true;
-            this.radioButton29.Text = "힌두교";
-            this.radioButton29.UseVisualStyleBackColor = true;
-            // 
-            // radioButton31
-            // 
-            this.radioButton31.AutoSize = true;
-            this.radioButton31.Location = new System.Drawing.Point(116, 22);
-            this.radioButton31.Name = "radioButton31";
-            this.radioButton31.Size = new System.Drawing.Size(58, 19);
-            this.radioButton31.TabIndex = 1;
-            this.radioButton31.TabStop = true;
-            this.radioButton31.Text = "불교";
-            this.radioButton31.UseVisualStyleBackColor = true;
-            // 
-            // radioButton32
-            // 
-            this.radioButton32.AutoSize = true;
-            this.radioButton32.Location = new System.Drawing.Point(14, 22);
-            this.radioButton32.Name = "radioButton32";
-            this.radioButton32.Size = new System.Drawing.Size(73, 19);
-            this.radioButton32.TabIndex = 0;
-            this.radioButton32.TabStop = true;
-            this.radioButton32.Text = "기독교";
-            this.radioButton32.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(313, 922);
+            this.button1.Location = new System.Drawing.Point(308, 763);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 28);
             this.button1.TabIndex = 13;
@@ -610,6 +509,13 @@
             this.groupBox14.TabIndex = 12;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "  기본 사항  ";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(255, 35);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(87, 25);
+            this.textBox2.TabIndex = 15;
             // 
             // textBox1
             // 
@@ -637,22 +543,14 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "이름 : ";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(255, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(87, 25);
-            this.textBox2.TabIndex = 15;
-            // 
             // want
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(450, 968);
+            this.ClientSize = new System.Drawing.Size(450, 808);
             this.Controls.Add(this.groupBox14);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox13);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox1);
             this.Location = new System.Drawing.Point(50, 50);
@@ -681,9 +579,6 @@
             this.groupBox8.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.ResumeLayout(false);
@@ -728,14 +623,6 @@
         private System.Windows.Forms.RadioButton radioButton13;
         private System.Windows.Forms.RadioButton radioButton15;
         private System.Windows.Forms.RadioButton radioButton16;
-        private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.RadioButton radioButton26;
-        private System.Windows.Forms.RadioButton radioButton23;
-        private System.Windows.Forms.RadioButton radioButton30;
-        private System.Windows.Forms.RadioButton radioButton29;
-        private System.Windows.Forms.RadioButton radioButton31;
-        private System.Windows.Forms.RadioButton radioButton32;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.TextBox textBox1;

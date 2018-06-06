@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace oneTouch
 {
+    
     public partial class info : Form
     {
         public info()
         {
             InitializeComponent();
+        }
+        private void info_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

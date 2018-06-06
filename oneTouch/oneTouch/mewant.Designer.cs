@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,17 +44,13 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
@@ -62,13 +64,7 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -99,6 +95,56 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "  선호 방정보  ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(196, 123);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(18, 15);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "~";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(196, 82);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(18, 15);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "~";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(150, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "만원";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(150, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(22, 15);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "평";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(84, 120);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(60, 25);
+            this.textBox1.TabIndex = 31;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(84, 78);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(60, 25);
+            this.textBox5.TabIndex = 30;
             // 
             // label7
             // 
@@ -186,7 +232,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(316, 590);
+            this.button1.Location = new System.Drawing.Point(315, 515);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 28);
             this.button1.TabIndex = 14;
@@ -194,43 +240,9 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.radioButton5);
-            this.groupBox3.Controls.Add(this.radioButton6);
-            this.groupBox3.Location = new System.Drawing.Point(29, 86);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(325, 62);
-            this.groupBox3.TabIndex = 15;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "  종교  ";
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(199, 28);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(93, 19);
-            this.radioButton5.TabIndex = 0;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "상관 없다";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(29, 28);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(128, 19);
-            this.radioButton6.TabIndex = 0;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "같은 종교 선호";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.groupBox3);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.textBox4);
@@ -238,10 +250,28 @@
             this.groupBox4.Controls.Add(this.textBox6);
             this.groupBox4.Location = new System.Drawing.Point(31, 404);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(397, 169);
+            this.groupBox4.Size = new System.Drawing.Size(397, 93);
             this.groupBox4.TabIndex = 14;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "  선호 인적사항  ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(218, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(18, 15);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "~";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(172, 46);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(22, 15);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "살";
             // 
             // label9
             // 
@@ -252,55 +282,28 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "나이 : ";
             // 
-            // label2
+            // textBox4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(150, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "만원";
+            this.textBox4.Location = new System.Drawing.Point(106, 43);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(60, 25);
+            this.textBox4.TabIndex = 37;
             // 
-            // label5
+            // label13
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(150, 81);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 15);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "평";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(325, 47);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(22, 15);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "살";
             // 
-            // textBox1
+            // textBox6
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(60, 25);
-            this.textBox1.TabIndex = 31;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(84, 78);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(60, 25);
-            this.textBox5.TabIndex = 30;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(196, 82);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(18, 15);
-            this.label10.TabIndex = 34;
-            this.label10.Text = "~";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(196, 123);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(18, 15);
-            this.label11.TabIndex = 35;
-            this.label11.Text = "~";
+            this.textBox6.Location = new System.Drawing.Point(259, 44);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(60, 25);
+            this.textBox6.TabIndex = 35;
             // 
             // groupBox2
             // 
@@ -443,52 +446,11 @@
             this.radioButton10.Text = "외향";
             this.radioButton10.UseVisualStyleBackColor = true;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(218, 47);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(18, 15);
-            this.label8.TabIndex = 39;
-            this.label8.Text = "~";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(172, 46);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(22, 15);
-            this.label12.TabIndex = 38;
-            this.label12.Text = "살";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(106, 43);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(60, 25);
-            this.textBox4.TabIndex = 37;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(325, 47);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(22, 15);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "살";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(259, 44);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(60, 25);
-            this.textBox6.TabIndex = 35;
-            // 
             // mewant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 635);
+            this.ClientSize = new System.Drawing.Size(450, 560);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
@@ -498,8 +460,6 @@
             this.Load += new System.EventHandler(this.mewant_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -527,9 +487,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;

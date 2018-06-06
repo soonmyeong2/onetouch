@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(432, 449);
             this.Name = "info";
             this.Text = "info";
+            this.Load += new System.EventHandler(this.info_Load);
             this.ResumeLayout(false);
 
         }
