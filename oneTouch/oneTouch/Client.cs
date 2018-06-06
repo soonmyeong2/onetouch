@@ -445,6 +445,14 @@ namespace oneTouch
 
                         read.Close();
                         conn1.Close();
+
+                        for (int i = 0; i < roomateId2.Count(); i++)
+                        {
+                            ListViewItem item1 = new ListViewItem(roomateId2[i].ToString());
+                            item1.SubItems.Add(roomate2[i].name.ToString());
+                            item1.SubItems.Add(roomate2[i].man_age.ToString());
+                            listView1.Items.AddRange(new ListViewItem[] { item1 });
+                        }
                         break;
                     }
                 case 2:
