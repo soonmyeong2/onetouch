@@ -97,6 +97,12 @@ namespace oneTouch
 
         //내가 원하는 룸메 아이디, 정보 리스트
         List<string> roomateId = new List<string>();
+
+        private void Client_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            conn1.Close();
+        }
+
         List<user> roomate = new List<user>();
         //나를 원하는 룸메 아이디, 정보 리스트
         List<string> roomateId2 = new List<string>();
@@ -113,6 +119,59 @@ namespace oneTouch
         }
 
         OleDbConnection conn1;
+        public int signal=0;
+
+        public void ReplaceInfo()
+        {
+            //연결
+            string sql1 = "Provider=tbprov.Tbprov.6;User ID=HR;Password=tibero;   Data Source=tibero;Persist Security Info=True";
+            conn1 = new OleDbConnection(sql1);
+            conn1.Open();
+            //set 로그인 유저의 info 변수들.
+            string sql;
+            sql = "select name, phone, man_age, man_age_min, man_age_max, man_sex, location, monthlyrent_min, monthlyrent_max, roomsize_min, roomsize_max, ul.sleep, ul.smoke, ul.drink, ul.tidy, ul.rule, ul.sharing, ull.sleep, ull.smoke, ull.drink, ull.tidy, ull.rule, ull.sharing, uc.MBTI_1, uc.MBTI_2, uc.MBTI_3, uc.MBTI_4, ulc.MBTI_1, ulc.MBTI_2, ulc.MBTI_3, ulc.MBTI_4 from users u, life ul, like_life ull, character uc, like_character ulc where user_id = " + user_id + " and u.life_id = ul.id and u.like_life_id = ull.id and u.character_id = uc.id and u.like_character_id = ulc.id;";
+
+            OleDbCommand cmd1 = new OleDbCommand(sql, conn1);
+            OleDbDataReader read = cmd1.ExecuteReader();
+
+            while (read.Read())
+            {
+                name = read.GetValue(0).ToString();
+                phone = read.GetValue(1).ToString();
+                man_age = read.GetValue(2).ToString();
+                man_age_min = read.GetValue(3).ToString();
+                man_age_max = read.GetValue(4).ToString();
+                man_sex = read.GetValue(5).ToString();
+                location = read.GetValue(6).ToString();
+                monthlyrent_min = read.GetValue(7).ToString();
+                monthlyrent_max = read.GetValue(8).ToString();
+                roomsize_min = read.GetValue(9).ToString();
+                roomsize_max = read.GetValue(10).ToString();
+                sleep = read.GetValue(11).ToString();
+                smoke = read.GetValue(12).ToString();
+                drink = read.GetValue(13).ToString();
+                tidy = read.GetValue(14).ToString();
+                rule = read.GetValue(15).ToString();
+                sharing = read.GetValue(16).ToString();
+                like_sleep = read.GetValue(17).ToString();
+                like_smoke = read.GetValue(18).ToString();
+                like_drink = read.GetValue(19).ToString();
+                like_tidy = read.GetValue(20).ToString();
+                like_rule = read.GetValue(21).ToString();
+                like_sharing = read.GetValue(22).ToString();
+                MBTI_1 = read.GetValue(23).ToString();
+                MBTI_2 = read.GetValue(24).ToString();
+                MBTI_3 = read.GetValue(25).ToString();
+                MBTI_4 = read.GetValue(26).ToString();
+                like_MBTI_1 = read.GetValue(27).ToString();
+                like_MBTI_2 = read.GetValue(28).ToString();
+                like_MBTI_3 = read.GetValue(29).ToString();
+                like_MBTI_4 = read.GetValue(30).ToString();
+            }
+
+            read.Close();
+            conn1.Close();
+        }
 
         public string GetLocation(int num)
         {
@@ -299,16 +358,19 @@ namespace oneTouch
             listView2.View = View.Details;
             listView2.BeginUpdate();
 
-            listView1.Columns.Add("ID");
-            listView1.Columns.Add("이름");
-            listView1.Columns.Add("나이");
+            listView1.Columns.Add("ID    ");
+            listView1.Columns.Add("이름     ");
+            listView1.Columns.Add("나이       ");
 
-            listView2.Columns.Add("보낸 사람");
-            listView2.Columns.Add("전화번호");
-            listView2.Columns.Add("유형");
+            listView2.Columns.Add("보낸 사람  ");
+            listView2.Columns.Add("전화번호          ");
+            listView2.Columns.Add("유형           ");
 
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            listView2.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            
             tabPage1.Text = @"룸메이트 찾기";
-            tabPage2.Text = @"나를 Pick 사람";
+            tabPage2.Text = @"연락처 함";
 
         }
 
@@ -320,17 +382,20 @@ namespace oneTouch
         public void set_id(string st)
         {
             user_id = st;
-            MessageBox.Show(user_id);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             want want1 = new want();
+            want1.set_id(user_id);
+            want1.set_info(name, man_age);
+            conn1.Close();
             want1.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            ReplaceInfo();
             selectedIndex = comboBox1.SelectedIndex;
             listView1.Items.Clear();
 
@@ -433,7 +498,7 @@ namespace oneTouch
 
                         for (int i = 0; i < roomateId2.Count(); i++)
                         {
-                            sql = "select user_id, name, man_age, man_age_min, man_age_max, man_sex, location, monthlyrent_min, monthlyrent_max, roomsize_min, roomsize_max, ul.sleep, ul.smoke, ul.drink, ul.tidy, ul.rule, ul.sharing, ull.sleep, ull.smoke, ull.drink, ull.tidy, ull.rule, ull.sharing, uc.MBTI_1, uc.MBTI_2, uc.MBTI_3, uc.MBTI_4, ulc.MBTI_1, ulc.MBTI_2, ulc.MBTI_3, ulc.MBTI_4 from users u, life ul, like_life ull, character uc, like_character ulc where user_id = " + roomateId[i] + " and u.life_id = ul.id and u.like_life_id = ull.id and u.character_id = uc.id and u.like_character_id = ulc.id;";
+                            sql = "select user_id, name, man_age, man_age_min, man_age_max, man_sex, location, monthlyrent_min, monthlyrent_max, roomsize_min, roomsize_max, ul.sleep, ul.smoke, ul.drink, ul.tidy, ul.rule, ul.sharing, ull.sleep, ull.smoke, ull.drink, ull.tidy, ull.rule, ull.sharing, uc.MBTI_1, uc.MBTI_2, uc.MBTI_3, uc.MBTI_4, ulc.MBTI_1, ulc.MBTI_2, ulc.MBTI_3, ulc.MBTI_4 from users u, life ul, like_life ull, character uc, like_character ulc where user_id = " + roomateId2[i] + " and u.life_id = ul.id and u.like_life_id = ull.id and u.character_id = uc.id and u.like_character_id = ulc.id;";
                             cmd1 = new OleDbCommand(sql, conn1);
                             read = cmd1.ExecuteReader();
                             while (read.Read())
@@ -588,53 +653,10 @@ namespace oneTouch
 
         private void Client_Load(object sender, EventArgs e)
         {
-            //연결
-            string sql1 = "Provider=tbprov.Tbprov.6;User ID=HR;Password=tibero;   Data Source=tibero;Persist Security Info=True";
-            conn1 = new OleDbConnection(sql1);
+            ReplaceInfo();
+           
             conn1.Open();
-            //set 로그인 유저의 info 변수들.
-            string sql;
-            sql = "select name, phone, man_age, man_age_min, man_age_max, man_sex, location, monthlyrent_min, monthlyrent_max, roomsize_min, roomsize_max, ul.sleep, ul.smoke, ul.drink, ul.tidy, ul.rule, ul.sharing, ull.sleep, ull.smoke, ull.drink, ull.tidy, ull.rule, ull.sharing, uc.MBTI_1, uc.MBTI_2, uc.MBTI_3, uc.MBTI_4, ulc.MBTI_1, ulc.MBTI_2, ulc.MBTI_3, ulc.MBTI_4 from users u, life ul, like_life ull, character uc, like_character ulc where user_id = " + user_id + " and u.life_id = ul.id and u.like_life_id = ull.id and u.character_id = uc.id and u.like_character_id = ulc.id;";
-
-            OleDbCommand cmd1 = new OleDbCommand(sql, conn1);
-            OleDbDataReader read = cmd1.ExecuteReader();
-
-            while (read.Read())
-            {
-                name = read.GetValue(0).ToString();
-                phone = read.GetValue(1).ToString();
-                man_age = read.GetValue(2).ToString();
-                man_age_min = read.GetValue(3).ToString();
-                man_age_max = read.GetValue(4).ToString();
-                man_sex = read.GetValue(5).ToString();
-                location = read.GetValue(6).ToString();
-                monthlyrent_min = read.GetValue(7).ToString();
-                monthlyrent_max = read.GetValue(8).ToString();
-                roomsize_min = read.GetValue(9).ToString();
-                roomsize_max = read.GetValue(10).ToString();
-                sleep = read.GetValue(11).ToString();
-                smoke = read.GetValue(12).ToString();
-                drink = read.GetValue(13).ToString();
-                tidy = read.GetValue(14).ToString();
-                rule = read.GetValue(15).ToString();
-                sharing = read.GetValue(16).ToString();
-                like_sleep = read.GetValue(17).ToString();
-                like_smoke = read.GetValue(18).ToString();
-                like_drink = read.GetValue(19).ToString();
-                like_tidy = read.GetValue(20).ToString();
-                like_rule = read.GetValue(21).ToString();
-                like_sharing = read.GetValue(22).ToString();
-                MBTI_1 = read.GetValue(23).ToString();
-                MBTI_2 = read.GetValue(24).ToString();
-                MBTI_3 = read.GetValue(25).ToString();
-                MBTI_4 = read.GetValue(26).ToString();
-                like_MBTI_1 = read.GetValue(27).ToString();
-                like_MBTI_2 = read.GetValue(28).ToString();
-                like_MBTI_3 = read.GetValue(29).ToString();
-                like_MBTI_4 = read.GetValue(30).ToString();
-            }
-
-
+        
             string msg_sql="select * from messages where r_id = " + user_id + ";";
             OleDbCommand cmd2 = new OleDbCommand(msg_sql, conn1);
             OleDbDataReader read2 = cmd2.ExecuteReader();
@@ -646,13 +668,14 @@ namespace oneTouch
             }
             for (int i = 0; i < messagebox.Count(); i++)
             {
+                string phone_num = "";
+                phone_num = messagebox[i].phone.ToString().Substring(0, 3) + "-" + messagebox[i].phone.ToString().Substring(3, 4) + "-" + messagebox[i].phone.ToString().Substring(7);
                 ListViewItem item1 = new ListViewItem(messagebox[i].s_name.ToString());
-                item1.SubItems.Add(messagebox[i].phone.ToString());
+                item1.SubItems.Add(phone_num);
                 item1.SubItems.Add(GetType(Convert.ToInt32(messagebox[i].type.ToString())));
                 listView2.Items.AddRange(new ListViewItem[] { item1 });
             }
 
-            read.Close();
             read2.Close();
             conn1.Close();
         }
@@ -684,7 +707,7 @@ namespace oneTouch
                     {
                         if (roomateId[i].ToString() == find_id)
                         {
-                            MessageBox.Show("\t이름 : " + roomate[i].name + "\n\t나이 : " + roomate[i].man_age + "\n\t지역 : " + GetLocation(Convert.ToInt32(roomate[i].location)) + "\n\t희망 월세 지출 : " + roomate[i].monthlyrent_min + " ~ " + roomate[i].monthlyrent_max + "        \n\t성격 유형 : " + GetCharacter(Convert.ToInt32(roomate[i].MBTI_1), Convert.ToInt32(roomate[i].MBTI_2), Convert.ToInt32(roomate[i].MBTI_3), Convert.ToInt32(roomate[i].MBTI_4)) + "\n\t수면 시간 : " + GetSleep(Convert.ToInt32(roomate[i].sleep)) + "\n\t흡연 여부 : " + GetSmoke(Convert.ToInt32(roomate[i].smoke)) + "\n\t음주 여부 : " + GetDrink(Convert.ToInt32(roomate[i].drink)) + "\n\t청결도 : " + GetTidy(Convert.ToInt32(roomate[i].tidy)) + "\n\t규칙도 : " + GetRule(Convert.ToInt32(roomate[i].rule)) + "\n\t물품공유도 : " + GetSharing(Convert.ToInt32(roomate[i].sharing)));
+                            MessageBox.Show("\t이름 : " + roomate[i].name + "\n\t나이 : " + roomate[i].man_age + "\n\t지역 : " + GetLocation(Convert.ToInt32(roomate[i].location)) + "\n\t희망 월세 지출 : " + roomate[i].monthlyrent_min + " ~ " + roomate[i].monthlyrent_max + " 만원        \n\t성격 유형 : " + GetCharacter(Convert.ToInt32(roomate[i].MBTI_1), Convert.ToInt32(roomate[i].MBTI_2), Convert.ToInt32(roomate[i].MBTI_3), Convert.ToInt32(roomate[i].MBTI_4)) + "\n\t수면 시간 : " + GetSleep(Convert.ToInt32(roomate[i].sleep)) + "\n\t흡연 여부 : " + GetSmoke(Convert.ToInt32(roomate[i].smoke)) + "\n\t음주 여부 : " + GetDrink(Convert.ToInt32(roomate[i].drink)) + "\n\t청결도 : " + GetTidy(Convert.ToInt32(roomate[i].tidy)) + "\n\t규칙도 : " + GetRule(Convert.ToInt32(roomate[i].rule)) + "\n\t물품공유도 : " + GetSharing(Convert.ToInt32(roomate[i].sharing)));
                         }
                     }
                     break;
@@ -693,7 +716,7 @@ namespace oneTouch
                     {
                         if (roomateId2[i].ToString() == find_id)
                         {
-                            MessageBox.Show("\t이름 : " + roomate2[i].name + "\n\t나이 : " + roomate2[i].man_age + "\n\t지역 : " + GetLocation(Convert.ToInt32(roomate2[i].location)) + "\n\t희망 월세 지출 : " + roomate2[i].monthlyrent_min + " ~ " + roomate2[i].monthlyrent_max + "        \n\t성격 유형 : " + GetCharacter(Convert.ToInt32(roomate2[i].MBTI_1), Convert.ToInt32(roomate2[i].MBTI_2), Convert.ToInt32(roomate2[i].MBTI_3), Convert.ToInt32(roomate2[i].MBTI_4)) + "\n\t수면 시간 : " + GetSleep(Convert.ToInt32(roomate2[i].sleep)) + "\n\t흡연 여부 : " + GetSmoke(Convert.ToInt32(roomate2[i].smoke)) + "\n\t음주 여부 : " + GetDrink(Convert.ToInt32(roomate2[i].drink)) + "\n\t청결도 : " + GetTidy(Convert.ToInt32(roomate2[i].tidy)) + "\n\t규칙도 : " + GetRule(Convert.ToInt32(roomate2[i].rule)) + "\n\t물품공유도 : " + GetSharing(Convert.ToInt32(roomate2[i].sharing)));
+                            MessageBox.Show("\t이름 : " + roomate2[i].name + "\n\t나이 : " + roomate2[i].man_age + "\n\t지역 : " + GetLocation(Convert.ToInt32(roomate2[i].location)) + "\n\t희망 월세 지출 : " + roomate2[i].monthlyrent_min + " ~ " + roomate2[i].monthlyrent_max + " 만원        \n\t성격 유형 : " + GetCharacter(Convert.ToInt32(roomate2[i].MBTI_1), Convert.ToInt32(roomate2[i].MBTI_2), Convert.ToInt32(roomate2[i].MBTI_3), Convert.ToInt32(roomate2[i].MBTI_4)) + "\n\t수면 시간 : " + GetSleep(Convert.ToInt32(roomate2[i].sleep)) + "\n\t흡연 여부 : " + GetSmoke(Convert.ToInt32(roomate2[i].smoke)) + "\n\t음주 여부 : " + GetDrink(Convert.ToInt32(roomate2[i].drink)) + "\n\t청결도 : " + GetTidy(Convert.ToInt32(roomate2[i].tidy)) + "\n\t규칙도 : " + GetRule(Convert.ToInt32(roomate2[i].rule)) + "\n\t물품공유도 : " + GetSharing(Convert.ToInt32(roomate2[i].sharing)));
                         }
                     }
                     break;
@@ -702,7 +725,7 @@ namespace oneTouch
                     {
                         if (roomateId3[i].ToString() == find_id)
                         {
-                            MessageBox.Show("\t이름 : " + roomate3[i].name + "\n\t나이 : " + roomate3[i].man_age + "\n\t지역 : " + GetLocation(Convert.ToInt32(roomate3[i].location)) + "\n\t희망 월세 지출 : " + roomate3[i].monthlyrent_min + " ~ " + roomate3[i].monthlyrent_max + "        \n\t성격 유형 : " + GetCharacter(Convert.ToInt32(roomate3[i].MBTI_1), Convert.ToInt32(roomate3[i].MBTI_2), Convert.ToInt32(roomate3[i].MBTI_3), Convert.ToInt32(roomate3[i].MBTI_4)) + "\n\t수면 시간 : " + GetSleep(Convert.ToInt32(roomate3[i].sleep)) + "\n\t흡연 여부 : " + GetSmoke(Convert.ToInt32(roomate3[i].smoke)) + "\n\t음주 여부 : " + GetDrink(Convert.ToInt32(roomate3[i].drink)) + "\n\t청결도 : " + GetTidy(Convert.ToInt32(roomate3[i].tidy)) + "\n\t규칙도 : " + GetRule(Convert.ToInt32(roomate3[i].rule)) + "\n\t물품공유도 : " + GetSharing(Convert.ToInt32(roomate3[i].sharing)));
+                            MessageBox.Show("\t이름 : " + roomate3[i].name + "\n\t나이 : " + roomate3[i].man_age + "\n\t지역 : " + GetLocation(Convert.ToInt32(roomate3[i].location)) + "\n\t희망 월세 지출 : " + roomate3[i].monthlyrent_min + " ~ " + roomate3[i].monthlyrent_max + " 만원       \n\t성격 유형 : " + GetCharacter(Convert.ToInt32(roomate3[i].MBTI_1), Convert.ToInt32(roomate3[i].MBTI_2), Convert.ToInt32(roomate3[i].MBTI_3), Convert.ToInt32(roomate3[i].MBTI_4)) + "\n\t수면 시간 : " + GetSleep(Convert.ToInt32(roomate3[i].sleep)) + "\n\t흡연 여부 : " + GetSmoke(Convert.ToInt32(roomate3[i].smoke)) + "\n\t음주 여부 : " + GetDrink(Convert.ToInt32(roomate3[i].drink)) + "\n\t청결도 : " + GetTidy(Convert.ToInt32(roomate3[i].tidy)) + "\n\t규칙도 : " + GetRule(Convert.ToInt32(roomate3[i].rule)) + "\n\t물품공유도 : " + GetSharing(Convert.ToInt32(roomate3[i].sharing)));
                         }
                     }
                     break;

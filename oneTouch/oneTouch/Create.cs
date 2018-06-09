@@ -42,10 +42,9 @@ namespace oneTouch
             conn1.Close();
             if (count == 0)
             {
-                if (ID_box.Text == "" || PW_box.Text == "" || NAME_box.Text == "" || (radioButton1.Checked == false && radioButton2.Checked == false))
+                if (ID_box.Text == "" || PW_box.Text == "" || NAME_box.Text == "" || (radioButton1.Checked == false && radioButton2.Checked == false)|| textBox1.Text=="" || 
+                    textBox2.Text==""|| textBox3.Text=="")
                 {
-
-
                     MessageBox.Show("가입에 실패하였습니다. 입력되지 않은 값이 존재합니다!!");
                 }
                 else
@@ -55,12 +54,13 @@ namespace oneTouch
 
                     OleDbCommand cmd = new OleDbCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "insert into users (user_id,pw,name,man_age,man_sex) values (?,?,?,?,?)";
+                    cmd.CommandText = "insert into users (user_id,pw,name,man_age,man_sex,phone) values (?,?,?,?,?,?)";
                     cmd.Parameters.AddWithValue("@user_id", ID_box.Text);
                     cmd.Parameters.AddWithValue("@pw", PW_box.Text);
                     cmd.Parameters.AddWithValue("@name", NAME_box.Text);
                     DateTime dt = dateTimePicker1.Value;
                     cmd.Parameters.AddWithValue("@man_age", (System.DateTime.Now.Year + 1) - dt.Year);
+         
                     if (radioButton1.Checked == true)
                     {
                         cmd.Parameters.AddWithValue("@man_sex", 0);
@@ -69,17 +69,28 @@ namespace oneTouch
                     {
                         cmd.Parameters.AddWithValue("@man_sex", 1);
                     }
+                    cmd.Parameters.AddWithValue("@phone", textBox1.Text+ textBox2.Text+ textBox3.Text);
                     cmd.Connection = conn;
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    System.Windows.Forms.MessageBox.Show("가입이 완료되었습니다!!", "Caption", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-
+                   MessageBox.Show("가입이 완료되었습니다!!");
+                    conn.Close();
                     this.Close();
                 }
             }
         }
 
         private void Create_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = "010";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

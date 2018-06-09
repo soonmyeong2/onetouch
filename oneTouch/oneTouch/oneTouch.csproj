@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{75A79E64-7235-46E2-87A6-59DD38F86F97}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>oneTouch</RootNamespace>
     <AssemblyName>oneTouch</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>

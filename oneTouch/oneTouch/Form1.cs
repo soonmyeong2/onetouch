@@ -43,7 +43,7 @@ namespace oneTouch
 
             OleDbCommand cmd = new OleDbCommand("select * from users", conn);
             OleDbDataReader read = cmd.ExecuteReader();
-
+            
             int count = 0;
             while (read.Read())
             {
@@ -52,17 +52,30 @@ namespace oneTouch
                 if (textBox1.Text == id && textBox2.Text == pw)
                 {
                     count = 1;
+                    Console.WriteLine("로그인 성공!!");
 
                     Client sign = new Client();
-                    sign.PassUserID = textBox1.Text;
+                    sign.set_id(textBox1.Text);
                     sign.ShowDialog();
                 }
+
+                
             }
             if (count == 0)
                 MessageBox.Show("아이디나 비밀번호가 올바르지 않습니다.");
-            
+
+       
             read.Close();
             conn.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }
