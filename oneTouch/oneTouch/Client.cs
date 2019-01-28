@@ -610,7 +610,7 @@ namespace oneTouch
 
                         for (int i = 0; i < roomateId3.Count(); i++)
                         {
-                            sql = "select user_id, name, man_age, man_age_min, man_age_max, man_sex, location, monthlyrent_min, monthlyrent_max, roomsize_min, roomsize_max, ul.sleep, ul.smoke, ul.drink, ul.tidy, ul.rule, ul.sharing, ull.sleep, ull.smoke, ull.drink, ull.tidy, ull.rule, ull.sharing, uc.MBTI_1, uc.MBTI_2, uc.MBTI_3, uc.MBTI_4, ulc.MBTI_1, ulc.MBTI_2, ulc.MBTI_3, ulc.MBTI_4 from users u, life ul, like_life ull, character uc, like_character ulc where user_id = " + roomateId[i] + " and u.life_id = ul.id and u.like_life_id = ull.id and u.character_id = uc.id and u.like_character_id = ulc.id;";
+                            sql = "select user_id, name, man_age, man_age_min, man_age_max, man_sex, location, monthlyrent_min, monthlyrent_max, roomsize_min, roomsize_max, ul.sleep, ul.smoke, ul.drink, ul.tidy, ul.rule, ul.sharing, ull.sleep, ull.smoke, ull.drink, ull.tidy, ull.rule, ull.sharing, uc.MBTI_1, uc.MBTI_2, uc.MBTI_3, uc.MBTI_4, ulc.MBTI_1, ulc.MBTI_2, ulc.MBTI_3, ulc.MBTI_4 from users u, life ul, like_life ull, character uc, like_character ulc where user_id = " + roomateId3[i] + " and u.life_id = ul.id and u.like_life_id = ull.id and u.character_id = uc.id and u.like_character_id = ulc.id;";
                             cmd1 = new OleDbCommand(sql, conn1);
                             read = cmd1.ExecuteReader();
                             while (read.Read())
